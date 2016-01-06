@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://wavecell.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://wavecell.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://wavecell.com/">
+      <s:element name="SendMT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubAccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UMID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Encoding" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ScheduledDateTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendWapPush">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubAccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UMID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WapUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Encoding" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ScheduledDateTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendWapPushResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendWapPushResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Encoding" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendMTSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMT" />
+  </wsdl:message>
+  <wsdl:message name="SendMTSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMTResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendWapPushSoapIn">
+    <wsdl:part name="parameters" element="tns:SendWapPush" />
+  </wsdl:message>
+  <wsdl:message name="SendWapPushSoapOut">
+    <wsdl:part name="parameters" element="tns:SendWapPushResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMOSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMO" />
+  </wsdl:message>
+  <wsdl:message name="SendMOSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMOResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMTHttpGetIn">
+    <wsdl:part name="AccountId" type="s:string" />
+    <wsdl:part name="SubAccountId" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="UMID" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="Source" type="s:string" />
+    <wsdl:part name="Body" type="s:string" />
+    <wsdl:part name="Encoding" type="s:string" />
+    <wsdl:part name="ScheduledDateTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMTHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWapPushHttpGetIn">
+    <wsdl:part name="AccountId" type="s:string" />
+    <wsdl:part name="SubAccountId" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="UMID" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="Source" type="s:string" />
+    <wsdl:part name="Body" type="s:string" />
+    <wsdl:part name="WapUrl" type="s:string" />
+    <wsdl:part name="Encoding" type="s:string" />
+    <wsdl:part name="ScheduledDateTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWapPushHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMOHttpGetIn">
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Source" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="OperatorId" type="s:string" />
+    <wsdl:part name="Body" type="s:string" />
+    <wsdl:part name="Encoding" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMOHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMTHttpPostIn">
+    <wsdl:part name="AccountId" type="s:string" />
+    <wsdl:part name="SubAccountId" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="UMID" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="Source" type="s:string" />
+    <wsdl:part name="Body" type="s:string" />
+    <wsdl:part name="Encoding" type="s:string" />
+    <wsdl:part name="ScheduledDateTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMTHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWapPushHttpPostIn">
+    <wsdl:part name="AccountId" type="s:string" />
+    <wsdl:part name="SubAccountId" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="UMID" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="Source" type="s:string" />
+    <wsdl:part name="Body" type="s:string" />
+    <wsdl:part name="WapUrl" type="s:string" />
+    <wsdl:part name="Encoding" type="s:string" />
+    <wsdl:part name="ScheduledDateTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWapPushHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMOHttpPostIn">
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Source" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="OperatorId" type="s:string" />
+    <wsdl:part name="Body" type="s:string" />
+    <wsdl:part name="Encoding" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMOHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="SendSoap">
+    <wsdl:operation name="SendMT">
+      <wsdl:input message="tns:SendMTSoapIn" />
+      <wsdl:output message="tns:SendMTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWapPush">
+      <wsdl:input message="tns:SendWapPushSoapIn" />
+      <wsdl:output message="tns:SendWapPushSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMO">
+      <wsdl:input message="tns:SendMOSoapIn" />
+      <wsdl:output message="tns:SendMOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SendHttpGet">
+    <wsdl:operation name="SendMT">
+      <wsdl:input message="tns:SendMTHttpGetIn" />
+      <wsdl:output message="tns:SendMTHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWapPush">
+      <wsdl:input message="tns:SendWapPushHttpGetIn" />
+      <wsdl:output message="tns:SendWapPushHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMO">
+      <wsdl:input message="tns:SendMOHttpGetIn" />
+      <wsdl:output message="tns:SendMOHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SendHttpPost">
+    <wsdl:operation name="SendMT">
+      <wsdl:input message="tns:SendMTHttpPostIn" />
+      <wsdl:output message="tns:SendMTHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWapPush">
+      <wsdl:input message="tns:SendWapPushHttpPostIn" />
+      <wsdl:output message="tns:SendWapPushHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMO">
+      <wsdl:input message="tns:SendMOHttpPostIn" />
+      <wsdl:output message="tns:SendMOHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SendSoap" type="tns:SendSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMT">
+      <soap:operation soapAction="http://wavecell.com/SendMT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWapPush">
+      <soap:operation soapAction="http://wavecell.com/SendWapPush" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMO">
+      <soap:operation soapAction="http://wavecell.com/SendMO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendSoap12" type="tns:SendSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMT">
+      <soap12:operation soapAction="http://wavecell.com/SendMT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWapPush">
+      <soap12:operation soapAction="http://wavecell.com/SendWapPush" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMO">
+      <soap12:operation soapAction="http://wavecell.com/SendMO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendHttpGet" type="tns:SendHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SendMT">
+      <http:operation location="/SendMT" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWapPush">
+      <http:operation location="/SendWapPush" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMO">
+      <http:operation location="/SendMO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendHttpPost" type="tns:SendHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SendMT">
+      <http:operation location="/SendMT" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWapPush">
+      <http:operation location="/SendWapPush" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMO">
+      <http:operation location="/SendMO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Send">
+    <wsdl:port name="SendSoap" binding="tns:SendSoap">
+      <soap:address location="http://wms1.wavecell.com/Send.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendSoap12" binding="tns:SendSoap12">
+      <soap12:address location="http://wms1.wavecell.com/Send.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendHttpGet" binding="tns:SendHttpGet">
+      <http:address location="http://wms1.wavecell.com/Send.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendHttpPost" binding="tns:SendHttpPost">
+      <http:address location="http://wms1.wavecell.com/Send.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

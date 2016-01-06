@@ -146,6 +146,12 @@ namespace TestExam.Controllers
             }
         }
 
+        [AllowAnonymous]
+        public ActionResult About()
+        {
+            return View();
+        }
+
         //
         // GET: /Account/Register
         [AllowAnonymous]
@@ -163,7 +169,7 @@ namespace TestExam.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Hometown = model.Hometown };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Hometown = model.UserName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
