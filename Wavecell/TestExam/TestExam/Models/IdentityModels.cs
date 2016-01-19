@@ -23,7 +23,7 @@ namespace TestExam.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("TestApp", throwIfV1Schema: false)
         {
         }
 
