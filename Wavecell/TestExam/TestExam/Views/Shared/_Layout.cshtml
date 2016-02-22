@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Test App</title>
+    <title>Karren's Cakes and Cupcakes</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @Styles.Render("~/Content/css")
@@ -12,16 +12,19 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Test App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </button>*@
+                <p class="navbar-brand">Karren's Cakes and Cupcakes</p>
+                @*@Html.ActionLink("Karren's Cakes and Cupcakes", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Pictures", "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("About", "Index", "Home", new { area = "" }, null)</li>
                     @*<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -33,7 +36,7 @@
         @RenderSection("SPAViews", required: false)
         <hr />
         <footer>
-            <p>@Html.ActionLink("About this App.", "About") &copy; @DateTime.Now.Year - Test App</p>
+            <p>@Html.ActionLink("About this App.", "About") &copy; @DateTime.Now.Year - Karren's Cakes and Cupcakes</p>
         </footer>
     </div>
 
